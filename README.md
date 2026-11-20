@@ -68,21 +68,13 @@ python -m venv .venv
 python -m pip install -r requirements.txt
 ```
 
-### 5. Install Tesseract OCR
-
-Download and install Tesseract OCR for Windows:
-
-https://github.com/UB-Mannheim/tesseract/wiki
-
-Update the Tesseract executable path in `appp.py` if necessary.
-
-### 6. Run the application
+### 5. Run the application
 
 ```bash
 python appp.py
 ```
 
-### 7. Open in your browser
+### 6. Open in your browser
 
 ```text
 http://127.0.0.1:5000
