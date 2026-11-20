@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake Job Detector AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <div class="logo">🛡️</div>
+        <h1>Fake Job Detector</h1>
+        <p>AI-powered job scam detection system</p>
+    </header>
+
+    <div class="card">
+        <h2>Analyze a Job Posting</h2>
+        <p>Upload a job advertisement or paste its description.</p>
+
+        <label for="fileInput">Upload PDF or Image</label>
+        <input
+            type="file"
+            id="fileInput"
+            accept=".pdf,.jpg,.jpeg,.png"
+        >
+
+        <p id="uploadStatus"></p>
+
+        <label for="jobText">Job Description</label>
+        <textarea id="jobText"
+            placeholder="Paste the job description here or upload a PDF/photo above..."
+        ></textarea>
+
+        <button id="analyzeBtn" onclick="analyzeJob()">
+            Analyze Job
+        </button>
+
+        <p id="loading" class="hidden">Analyzing job...</p>
+        <p id="error" class="error"></p>
+    </div>
+
+    <div id="result" class="result hidden">
+        <div class="score-card">
+            <h2>Risk Score</h2>
+            <div id="score">0%</div>
+            <h3 id="status"></h3>
+        </div>
+
+        <div class="result-section">
+            <h3>🚩 Suspicious Phrases</h3>
+            <div id="phrases"></div>
+        </div>
+
+        <div class="result-section">
+            <h3>💡 Recommendations</h3>
+            <ul id="suggestions"></ul>
+        </div>
+
+        <p id="wordCount"></p>
+    </div>
+
+    <footer>
+        <p>AI analysis is an estimate. Always verify jobs independently.</p>
+    </footer>
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
